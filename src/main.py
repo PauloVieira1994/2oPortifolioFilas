@@ -69,8 +69,7 @@ def get_all_queues():
 
 @app.route('/element/<queue_name>/<element>', methods=['POST'])
 def add_element(queue_name, element):
-    #print(f"A fila de nome {queue_name} esta na posicao {idx_queues[queue_name]}")
-    #print(queues[idx_queues[queue_name]]['queue'])
+
     queues[idx_queues[queue_name]]['queue'].append(element)
     queues[idx_queues[queue_name]]['qtd'] += 1
 
@@ -78,8 +77,7 @@ def add_element(queue_name, element):
 
 @app.route('/element/<queue_name>', methods=['DELETE'])
 def del_element(queue_name):
-    #print(f"A fila de nome {queue_name} esta na posicao {idx_queues[queue_name]}")
-    #print(queues[idx_queues[queue_name]]['queue'])
+
     queues[idx_queues[queue_name]]['queue'].pop(0)
     queues[idx_queues[queue_name]]['qtd'] -= 1
 
